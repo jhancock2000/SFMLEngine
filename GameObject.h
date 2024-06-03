@@ -5,6 +5,7 @@
 #include <SFML/Window.hpp>
 #include <stdio.h>
 #include <iostream>
+#include "Physics2D.h"
 
 using namespace std;
 using namespace sf;
@@ -29,6 +30,9 @@ public:
 	void setTag(string tag);
 
 	sf::RectangleShape obj;
+
+	Physics2D physics;
+
 
 	//test
 
