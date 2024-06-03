@@ -38,6 +38,7 @@ void Game::events() {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 				//gameObjects[0].setPos({ gameObjects[0].getPos().x + 100, gameObjects[0].getPos().y});
 				cout << gameObjects[0].getTag() << endl;
+				//player.gameObject.physics.setVelocity({ 0, player.gameObject.physics.getSpeed()});
 				player.up();
 				cout << player.gameObject.physics.getSpeed() << endl;
 			}
