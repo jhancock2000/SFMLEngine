@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 ﻿  Game.cpp
   GameObject.cpp
   Main.cpp
   Generating Code...
   LINK : C:\Users\jonat\Desktop\EngineTesting\x64\Debug\EngineTesting.exe not found or not built by the last incremental link; performing full link
+=======
+﻿  GameObject.cpp
+  Main.cpp
+  Game.cpp
+  Generating Code...
+  LINK : C:\Users\jonat\Desktop\Engine\x64\Debug\EngineTesting.exe not found or not built by the last incremental link; performing full link
+>>>>>>> Stashed changes
 sfml-graphics-s-d.lib(Transformable.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Transformable.obj)' or at ''; linking object as if no debug info
 sfml-graphics-s-d.lib(Shape.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Shape.obj)' or at ''; linking object as if no debug info
 sfml-graphics-s-d.lib(RectangleShape.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(RectangleShape.obj)' or at ''; linking object as if no debug info
@@ -58,4 +66,8 @@ sfml-system-s-d.lib(MutexImpl.obj) : warning LNK4099: PDB '' was not found with 
 sfml-system-s-d.lib(ClockImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(ClockImpl.obj)' or at ''; linking object as if no debug info
 sfml-system-s-d.lib(SleepImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(SleepImpl.obj)' or at ''; linking object as if no debug info
 sfml-system-s-d.lib(ThreadLocalImpl.obj) : warning LNK4099: PDB '' was not found with 'sfml-system-s-d.lib(ThreadLocalImpl.obj)' or at ''; linking object as if no debug info
+<<<<<<< Updated upstream
   EngineTesting.vcxproj -> C:\Users\jonat\Desktop\EngineTesting\x64\Debug\EngineTesting.exe
+=======
+  EngineTesting.vcxproj -> C:\Users\jonat\Desktop\Engine\x64\Debug\EngineTesting.exe
+>>>>>>> Stashed changes
