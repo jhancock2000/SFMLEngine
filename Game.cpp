@@ -2,19 +2,32 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Physics2D.h"
+#include "Textures.h"
 using namespace sf;
 Game::Game() {
 
-    gameObject = GameObject({20, 20}, {20, 20}, "Player", "Player");
+    gameObject = GameObject({20, 20}, {100, 100}, "Player", "Player");
 	gameObjects.push_back(gameObject);
-	//player = Player(obj);
 
-	if (gameObject.getTag() == "Player") {
-		player = Player(gameObject);
-		player.gameObject.physics.enabled = true;
-		player.gameObject.physics.setSpeed(100);
-		
+	gameObject = GameObject({ 200, 100 }, { 300, 50 }, "Wall", "Wall");
+	gameObjects.push_back(gameObject);
+
+	for (size_t i = 0; i < gameObjects.size(); i++)
+	{
+		if (gameObjects[i].getTag() == "Player") {
+			player = Player(gameObjects[i]);
+			player.gameObject.physics.enabled = true;
+			player.gameObject.physics.setSpeed(100);
+			player.gameObject.obj.setTexture(player.gameObject.textures.setTexture("Textures/file.png"));
+
+		}
+
+		if (gameObjects[i].getTag() == "Wall") {
+			gameObjects[i].physics.enabled = false;
+			gameObjects[i].obj.setTexture(gameObjects[i].textures.setTexture("Textures/floor.jpg"));
+		}
 	}
+
 }
 
 Game::~Game() {
@@ -57,6 +70,13 @@ void Game::draw() {
 	window.clear();
 	//window.draw(gameObjects.at(0).obj);
 	window.draw(player.gameObject.obj);
+
+	for (size_t i = 0; i < gameObjects.size(); i++)
+	{
+		if (gameObjects[i].getTag() == "Wall") {
+			window.draw(gameObjects[i].obj);
+		}
+	}
 	//window.draw();
 	window.display();
 

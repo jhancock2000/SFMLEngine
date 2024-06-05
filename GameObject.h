@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "Physics2D.h"
+#include "Textures.h"
 
 using namespace std;
 using namespace sf;
@@ -29,9 +30,12 @@ public:
 	void setSize(sf::Vector2f size);
 	void setTag(string tag);
 
+
 	sf::RectangleShape obj;
 
 	Physics2D physics;
+
+	Textures textures;
 
 
 	//test
@@ -41,10 +45,12 @@ private:
 
 	string tag;
 
-	sf::Color c = Color::White;
+	//sf::Color c = Color::White;
 
 	sf::Vector2f position;
 	sf::Vector2f size;
+
+
 
 	//added some comments
 

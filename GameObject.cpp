@@ -9,9 +9,10 @@ GameObject::GameObject(sf::Vector2f pos, sf::Vector2f size, string name) {
 	this->size = size;
 	this->name = name;
 	this->tag = "gameObject";
-
 	obj.setSize(sf::Vector2f(size));
 	obj.setPosition(sf::Vector2f(position));
+
+
 }
 
 GameObject::GameObject(sf::Vector2f pos, sf::Vector2f size, string name, string tag) {
@@ -20,8 +21,13 @@ GameObject::GameObject(sf::Vector2f pos, sf::Vector2f size, string name, string 
 	this->name = name;
 	this->tag = tag;
 
+	
+
 	obj.setSize(sf::Vector2f(size));
 	obj.setPosition(sf::Vector2f(position));
+
+
+
 }
 
 GameObject::~GameObject() {
@@ -49,3 +55,4 @@ void GameObject::setSize(sf::Vector2f s) {
 void GameObject::setTag(string tag) {
 	this->tag = tag;
 }
+
