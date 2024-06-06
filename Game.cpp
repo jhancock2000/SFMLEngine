@@ -3,23 +3,25 @@
 #include "Player.h"
 #include "Physics2D.h"
 #include "Textures.h"
+#include "Input.h"
 using namespace sf;
 Game::Game() {
 
-    gameObject = GameObject({20, 20}, {100, 100}, "Player", "Player");
+	gameObject = GameObject({ 175, 20 }, { 100, 200 }, "Player", "Player");
 	player = Player(gameObject);
 	gameObjects.push_back(&player.gameObject);
 
-	gameObject = GameObject({ 200, 100 }, { 300, 50 }, "Wall", "Wall");
+	gameObject = GameObject({ 100, 500 }, { 300, 50 }, "Wall1", "Wall");
 	gameObjects.push_back(&gameObject);
 
 	for (size_t i = 0; i < gameObjects.size(); i++)
 	{
 		if (gameObjects[i]->getTag() == "Player") {
-			
+
 			gameObjects[i]->physics.enabled = true;
+			gameObjects[i]->physics.setGravity(1);
 			gameObjects[i]->physics.setSpeed(100);
-			gameObjects[i]->obj.setTexture(player.gameObject.textures.setTexture("Textures/file.png"));
+			//gameObjects[i]->obj.setTexture(player.gameObject.textures.setTexture("Textures/file.png"));
 
 		}
 
@@ -37,31 +39,32 @@ Game::~Game() {
 
 void Game::init(const char* title, const int W, const int H) {
 	window.create(sf::VideoMode(W, H), title);
+	window.setFramerateLimit(60); //WOW FRAMERATE DEPENDANT PHYSICS IS THAT EASY.....THIS WILL BREAK IF GAME LAGS BTW...REFACTOR IN THE FUTURE
 
 	isRunning = true;
 }
 
 void Game::events() {
-	
+
 	sf::Event e;
 	while (window.pollEvent(e)) {
 		if (e.type == Event::Closed) {
 			window.close();
 		}
 		if (e.type == Event::KeyPressed) {
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-				player.up();
-				cout << player.gameObject.physics.getSpeed() << endl;
-			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-				//gameObjects[0].setTag("Player");
-			}
+			Input(e.key.code);
 		}
 	}
-} 
+}
 
 void Game::update() {
+	for (size_t i = 0; i < gameObjects.size(); i++)
+	{
+		if (gameObjects[i]->physics.isEnabled()) {
+			gameObjects[i]->obj.move({ gameObjects[i]->physics.getVelocity().x, gameObjects[i]->physics.getGravity()});
 
+		}
+	}
 }
 
 void Game::draw() {
