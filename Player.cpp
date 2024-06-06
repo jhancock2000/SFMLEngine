@@ -23,6 +23,7 @@ void Player::down() {
 void Player::right() {
 	gameObject.physics.setVelocity({ 25, 0 });
 	//cout << gameObject.physics.getVelocity().x << endl;
+	//g
 }
 
 void Player::left() {
