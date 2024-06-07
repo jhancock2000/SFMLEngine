@@ -1,12 +1,20 @@
 #pragma once
 #include "Includes.h"
-#include "Game.h"
-#include "Player.h"
 
-class Input : public Game {
+/// <summary>
+/// literally just for shortening input code. this makes rebinable inputs impossible but that's fine...can refactor some day
+/// </summary>
+class Input {
 public:
 	Input();
-	Input(sf::Keyboard::Key key);
+
+	Keyboard::Key Up();
+	Keyboard::Key Down();
+	Keyboard::Key Left();
+	Keyboard::Key Right();
+	Keyboard::Key Jump();
+	
+	
 
 
 private:

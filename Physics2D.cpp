@@ -6,6 +6,7 @@ Physics2D::Physics2D() {
 		mass = 0;
 		velocity = { 0, 0 };
 		gravity = 0;
+		isGrounded = true;
 	}
 }
 

@@ -12,7 +12,6 @@ Player::Player(GameObject player) {
 
 void Player::up() {
 	gameObject.physics.setVelocity({ 0, -25 });
-	cout << gameObject.getPos().x << " " << gameObject.getPos().y << endl;
 }
 
 void Player::down() {

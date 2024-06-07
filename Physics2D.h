@@ -24,6 +24,7 @@ public:
 	Vector2f getVelocity() { return velocity; }
 
 	bool enabled;
+	bool isGrounded;
 
 private:
 

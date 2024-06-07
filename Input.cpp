@@ -4,17 +4,19 @@ Input::Input() {
 	//intentionally blank
 }
 
-Input::Input(sf::Keyboard::Key key) {
-	if (key == sf::Keyboard::D) {
-		player.right();
-	}
-	if (key == sf::Keyboard::A) {
-		player.left();
-	}
-	if (key == sf::Keyboard::W) {
-		player.up();
-	}
-	if (key == sf::Keyboard::S) {
-		player.down();
-	}
+Keyboard::Key Input::Up() {
+	return Keyboard::W;
+}
+
+Keyboard::Key Input::Down() {
+	return Keyboard::S;
+}
+Keyboard::Key Input::Left() {
+	return Keyboard::A;
+}
+Keyboard::Key Input::Right() {
+	return Keyboard::D;
+}
+Keyboard::Key Input::Jump() {
+	return Keyboard::Space;
 }

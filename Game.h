@@ -7,6 +7,7 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Physics2D.h"
+#include "Input.h"
 
 class Game {
 public:
@@ -21,6 +22,7 @@ public:
 	bool running() { return isRunning; }
 
 	Player player;
+	Input input;
 
 private:
 	bool isRunning; //private so I can set it in the pointer class
